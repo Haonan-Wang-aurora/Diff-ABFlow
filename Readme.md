@@ -8,10 +8,11 @@ $^1$ Huazhong University of Science and Technology  $^2$ National University of 
 
 $^✉$ Corresponding Author.
 
-![fig1](.\images\Figure_1.png)
+![fig1](./images/Figure_1.png)
 
-![fig1](.\images\Figure_2.png)
+![fig1](./images/Figure_2.png)
 
 ## News
 
 2025.09.18: Our paper is accepted by NIPS 2025 as Spotlight paper. The code is coming soon.
+
