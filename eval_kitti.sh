@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=1 python evaluate_event.py --model=ckpts-DiffABFlow/DiffABFlow-kitti-daytime.pth  --dataset=kitti

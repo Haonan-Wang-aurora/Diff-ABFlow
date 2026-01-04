@@ -1,6 +1,4 @@
-# Injecting Frame-Event Complementary Fusion into Diffusion for Optical Flow in Challenging Scenes
-
-## NeurIPS2025 Spotlight
+# [NeurIPS 2025 Spotlight] Injecting Frame-Event Complementary Fusion into Diffusion for Optical Flow in Challenging Scenes
 
 [Haonan Wang](https://scholar.google.com.hk/citations?hl=zh-CN&view_op=list_works&gmla=AH8HC4wel7f5UzHZm3NN_RHl9by4ODKcg12HuynxhWBbyyFpY3GCQp_wRryBPNSci76ZfoOB8_IDasu-vEEyzy9skm3tDy0&user=LCNXgmAAAAAJ) $^{1}$, [Hanyu Zhou](https://hyzhouboy.github.io/) $^{2✉}$,  [Haoyue Liu](https://scholar.google.com.hk/citations?hl=zh-CN&user=DadbHdAAAAAJ) $^1$, [Luxin Yan](https://scholar.google.com.hk/citations?user=5CS6T8AAAAAJ&hl=zh-CN) $^{1}$
 
@@ -8,13 +6,72 @@ $^1$ Huazhong University of Science and Technology  $^2$ National University of 
 
 $^✉$ Corresponding Author.
 
-![fig1](./images/Figure_1.png)
+## Overview
 
-![fig1](./images/Figure_2.png)
+![fig1](.\images\Figure_1.png)
+
+![fig1](.\images\Figure_2.png)
 
 ## News
 
-2025.09.18: Our paper is accepted by NIPS 2025 as Spotlight paper. The code is coming soon.
+2025.09.18: Our paper is accepted by NeurIPS 2025 as Spotlight paper. 
+
+2026.01.04: We release the official implementation of our Diff-ABFlow.
 
 
+
+## Installation
+
+```shell
+# Clone our repository
+git clone https://github.com/Haonan-Wang-aurora/Diff-ABFlow.git
+cd Diff-ABFlow
+
+# Create environment
+conda create -n diff-abflow python=3.8 -y
+conda activate diff-abflow
+
+# Install torch
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+
+# Install dependency
+pip install -r requirements.txt
+```
+
+
+
+## Datasets
+
+The datasets used in our paper is released on [Hugging Face](https://huggingface.co/datasets/Aurora03/Diff-ABFlow-Datasets).
+
+Download the datasets and modify the corresponding paths in `core/event_datasets.py`.
+
+
+
+## Evaluation
+
+We provide the evaluation scripts. Our trained models can be downloaded on [Hugging Face](https://huggingface.co/Aurora03/Diff-ABFlow-models).
+
+```shell
+# Please modify the save path in 'evaluate_event.py' before running the following scripts.
+# Evaluate ckpt on Event-KITTI dataset
+sh eval_kitti.sh
+# Evaluate ckpt on DSEC dataset
+sh eval_dsec.sh
+# Visualization optical flow
+python visualization.py
+```
+
+
+
+## Training
+
+We provide the training code for Event-KITTI and DSEC datasets. After downloading our provided datasets on [Hugging Face](https://huggingface.co/datasets/Aurora03/Diff-ABFlow-Datasets), you can train your model based on the pretrained checkpoint `DiffABFlow-pretrained.pth`. Modify the path in `train.py` to change the path to save your own checkpoints.
+
+```shell
+# Training on Event-KITTI dataset
+sh train_kitti.sh
+# Training on DSEC dataset
+sh train_dsec.sh
+```
 
