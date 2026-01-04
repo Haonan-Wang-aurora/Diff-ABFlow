@@ -8,7 +8,7 @@ $^✉$ Corresponding Author.
 
 ## Overview
 
-![fig1](./images/Figure_1.png)
+![fig2](./images/Figure_1.png)
 
 ![fig2](./images/Figure_2.png)
 
@@ -42,22 +42,25 @@ pip install -r requirements.txt
 
 ## Datasets
 
-The datasets used in our paper is released on [Hugging Face](https://huggingface.co/datasets/Aurora03/Diff-ABFlow-Datasets).
+The datasets used in our paper are released on [Hugging Face](https://huggingface.co/datasets/Aurora03/Diff-ABFlow-Datasets).
 
-Download the datasets and modify the corresponding paths in `core/event_datasets.py`.
+Please download the datasets and update the corresponding paths in `core/event_datasets.py`.
 
 
 
 ## Evaluation
 
-We provide the evaluation scripts. Our trained models can be downloaded on [Hugging Face](https://huggingface.co/Aurora03/Diff-ABFlow-models).
+We release the evaluation scripts along with our trained models, which are available on [Hugging Face](https://huggingface.co/Aurora03/Diff-ABFlow-models).
 
 ```shell
-# Please modify the save path in 'evaluate_event.py' before running the following scripts.
+# Please modify the inference results saving path in 'evaluate_event.py' before running the following scripts.
+
 # Evaluate ckpt on Event-KITTI dataset
 sh eval_kitti.sh
+
 # Evaluate ckpt on DSEC dataset
 sh eval_dsec.sh
+
 # Visualization optical flow
 python visualization.py
 ```
@@ -66,13 +69,15 @@ python visualization.py
 
 ## Training
 
-We provide the training code for Event-KITTI and DSEC datasets. After downloading our provided datasets on [Hugging Face](https://huggingface.co/datasets/Aurora03/Diff-ABFlow-Datasets), you can train your model based on the pretrained checkpoint `DiffABFlow-pretrained.pth`. Modify the path in `train.py` to change the path to save your own checkpoints.
+We provide training code for the **Event-KITTI** and **DSEC** datasets. After downloading the processed datasets from [Hugging Face](https://huggingface.co/datasets/Aurora03/Diff-ABFlow-Datasets), you can train the model starting from the provided pretrained checkpoint `DiffABFlow-pretrained.pth`.
+
+Please modify the checkpoint saving path in `train.py` to specify where your own checkpoints will be stored.
 
 ```shell
 # Training on Event-KITTI dataset
 sh train_kitti.sh
+
 # Training on DSEC dataset
 sh train_dsec.sh
 ```
-
 
