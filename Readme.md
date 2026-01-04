@@ -8,9 +8,9 @@ $^✉$ Corresponding Author.
 
 ## Overview
 
-![fig1](.\images\Figure_1.png)
+![fig1](./images/Figure_1.png)
 
-![fig1](.\images\Figure_2.png)
+![fig2](./images/Figure_2.png)
 
 ## News
 
@@ -74,4 +74,5 @@ sh train_kitti.sh
 # Training on DSEC dataset
 sh train_dsec.sh
 ```
+
 
