@@ -190,11 +190,7 @@ class DiffABFlow(nn.Module):
             corr = self.corr_fn(coords1)
             flow = coords1 - coords0
             with autocast(enabled=self.args.mixed_precision):
-                dfm_params = [t_ii, self.update, ii, 0]  
-                # print("net.shape:",net.shape)
-                # print("inp8.shape:",inp8.shape)
-                # print("corr.shape:",corr.shape)
-                # print("flow.shape:",flow.shape)
+                dfm_params = [t_ii, self.update, ii, 0]
                 net, delta_flow = self.update_dfm(net, inp8, corr, flow, itr, first_step=first_step, dfm_params=dfm_params)  
                 up_mask = self.um8(net)
 
