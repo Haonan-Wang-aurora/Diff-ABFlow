@@ -8,9 +8,11 @@ $^✉$ Corresponding Author.
 
 ## Overview
 
-![fig2](./images/Figure_1.png)
+![fig1](./images/Figure_1.png)
 
 ![fig2](./images/Figure_2.png)
+
+Diff-ABFlow mainly contains two parts: Attention-ABF for feature fusion and MC-IDD for denoising. In Attention-ABF, we utilize the appearance-boundary complementarity to fuse frame and event. In MC-IDD, we first integrate time embedding, visual feature and motion feature in the TVM-MCA module based on multi-way cross-attention mechanism. Then in MGDD, we input the comprehensive feature and the optical flow of the current time step into multiple GRUs with memory slots for iterative denoising. We repeatedly run MC-IDD a certain number of times on the noisy optical flow to obtain the clear optical flow.
 
 ## News
 
@@ -79,5 +81,20 @@ sh train_kitti.sh
 
 # Training on DSEC dataset
 sh train_dsec.sh
+```
+
+
+
+## Citation
+
+If you find this repository/work helpful in your research, welcome to cite our paper and give a ⭐.
+
+```
+@article{wang2025injecting,
+  title={Injecting Frame-Event Complementary Fusion into Diffusion for Optical Flow in Challenging Scenes},
+  author={Wang, Haonan and Zhou, Hanyu and Liu, Haoyue and Yan, Luxin},
+  journal={arXiv preprint arXiv:2510.10577},
+  year={2025}
+}
 ```
 
