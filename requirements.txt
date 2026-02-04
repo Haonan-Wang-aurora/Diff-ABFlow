@@ -1,0 +1,5 @@
+numpy  1.19.5
+opencv-python  4.6.0.66
+timm  0.6.12
+scipy  1.5.4
+matplotlib  3.3.4
